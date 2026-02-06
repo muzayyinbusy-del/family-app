@@ -6,7 +6,37 @@ st.set_page_config(
     layout="centered"
 )
 
+# --- FAMILY COUNTER DATA ---
+current_members = {
+    "Hakeem", "Mymoona", "Raihana", "Abbas", "Lubaina", "Kaleem", "Momin", "Naziya",
+    "Matheen", "Reshma", "Shahina", "Mohsin", "Affan", "Nisha", "Afreena", "Habeeb",
+    "Ainy", "Ayaz", "Fathima", "Ahmed", "Lubaid", "Jahan", "Lubaba", "Shahid",
+    "Muzna", "Muzayyin", "Mazin", "Mizan", "Mehreen", "Mahir", "Mariyam",
+    "Muhammad", "Malhan", "Nafa", "Nazneen", "Haya", "Yahya", "Hannee",
+    "Hala", "Eesa", "Rabi", "Huma", "Shanaya", "Noureen"
+}
+
+coming_soon = {
+    "Lulu Boya's child",
+    "Ainy DD's child"
+}
+
+total_current = len(current_members)
+total_coming = len(coming_soon)
+
 st.title("🌳 Hakim Family Tree")
+
+st.markdown(
+    f"""
+    <div style="position:fixed; top:80px; right:20px; 
+                background-color:#fde68a; padding:15px;
+                border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1)">
+        👨‍👩‍👧‍👦 <b>Family Members:</b> {total_current}<br>
+        👶 <b>Coming Soon:</b> {total_coming}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # --- NAME INPUT ---
@@ -17,7 +47,7 @@ user_name = user_name.strip().capitalize()
 
 # --- PERSONAL MESSAGES ---
 personal_messages = {
-"Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
+    "Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
     "Mymoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
     "Raihana": "Puppi! The first child and the first daughter! Welcome!",
     "Abbas": "Puppa! The man who married the first daughter of HF!",
@@ -62,7 +92,6 @@ personal_messages = {
     "Huma": "Huma! Lulu Boya's first daughter and soon to be a big sister! Welcome!",
     "Shanaya": "Shannu! Hide & Seek champion! Best seeker and best hider!"
 }
-
 
 
 # --- ACCESS CONTROL ---
@@ -140,7 +169,7 @@ family_groups = {
     "Parents": ["Hakeem ❤️ Mymoona "],
     "Children": [
         "Raihana ❤️ Abbas", "Lubaina ❤️ Kaleem", "Momin ❤️ Naziya", "Mohsin", "Matheen ❤️ Reshma & Shahina",
-           
+
     ],
     "Grandchildren": [
         "Affan ❤️ Nisha", "Afreena ❤️ Habeeb", "Lubaid ❤️ Jahan", "Lubaba ❤️ Shahid",
@@ -150,7 +179,7 @@ family_groups = {
     ],
     "Great-Grandchildren": [
         "Haya", "Nafa", "Nazneen",  "Yahya", "Shanaya", "Eesa", "Hannee", "Hala",
-         "Rabi", "Huma", 
+        "Rabi", "Huma",
     ]
 }
 
@@ -158,14 +187,3 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
-
-
-
-
-
-
-
-
-
-
-
