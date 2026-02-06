@@ -134,16 +134,16 @@ st.divider()
 st.header("👨‍👩‍👧‍👦 View by Generation")
 
 family_groups = {
-    "Parents": ["Hakeem", "Maimoona"],
+    "Parents": ["Hakeem ❤️ Mymoona "],
     "Children": [
-        "Raihana", "Lubaina", "Momin", "Mohsin", "Matheen",
-        "Abbas", "Kaleem", "Naziya", "Reshma", "Shahina"
+        "Raihana ❤️ Abbas", "Lubaina ❤️ Kaleem", "Momin ❤️ Naziya", "Mohsin", "Matheen ❤️ Reshma & Shahina",
+           
     ],
     "Grandchildren": [
-        "Affan", "Afreena", "Ainy", "Fathima", "Ahmed",
-        "Lubaid", "Lubaba", "Muzna", "Muzayyin",
-        "Mazin", "Mizan", "Mehreen", "Mahir",
-        "Muhammad", "Mariyam"
+        "Affan ❤️ Nisha", "Afreena ❤️ Habeeb", "Lubaid ❤️ Jahan", "Lubaba ❤️ Shahid",
+        "Ainy ❤️ Ayaz", "Muzayyin", "Fathima", "Mehreen ❤️ Noureen",
+        "Mariyam", "Muzna", "Muhammad", "Ahmed",
+        "Mazin", "Mahir", "Mizan", "Malhan"
     ],
     "Great-Grandchildren": [
         "Nafa", "Nazneen", "Haya", "Hannee", "Hala",
@@ -155,6 +155,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
