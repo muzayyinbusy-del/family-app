@@ -43,7 +43,7 @@ personal_messages = {
     "Muzna": "Ayyyyyyy! My one and only sister! Welcome to the board!",
     "Muzayyin": "Really?",
     "Mazin": "Ayyy Mazin! My only brother! oh wait........",
-    "Mizan": "My smallest brother!!!! Mizannnnnn! I LOVE YOU!",
+    "Mizan": "My youngest brother!!!! Mizannnnnn! I LOVE YOU!",
     "Mehreen": "The first daughter of Buddy! Welcome!",
     "Noureen": "Loading...",
     "Mahir": "Solider! My defender! Welcome to the website!",
@@ -51,12 +51,12 @@ personal_messages = {
     "Muhammad": "One of the coolest dude in the family! Welcome!",
     "Malhan": "The youngest one in the family so far! Welcome!",
     "Nafa": "Nafa! The daughter of the biggest Pulli in the family!",
-    "Nazneen": "Nazneen! The daughter of the biggest grandson of the family! Welcome!",
+    "Nazneen": "Nazneen! The daughter of the eldest grandson of the family! Welcome!",
     "Haya": "Haya! The eldest daughter of Jiju!",
     "Yahya": "The eldest grandson of Puppi!!",
     "Hannee": "Hannee! The second daughter of Afreena DD! Welcome!",
     "Hala": "Hala Wallah 3amak Abdullah! Welcome!",
-    "Eesa": "Eesa! The biggest son of Ayaz Jiju!",
+    "Eesa": "Eesa! The eldest son of Ayaz Jiju!",
     "Rabi": "Rabi! Fan! Fan! only me and Rabi knows what the code 'Fan' means!",
     "Huma": "Huma! Lulu Boya's first daughter and soon to be a big sister! Welcome!",
     "Shanaya": "Shannu! Hide & Seek champion! Best seeker and best hider!"
@@ -155,6 +155,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
