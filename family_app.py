@@ -32,12 +32,12 @@ personal_messages = {
     "Nisha": "Nisha Babhi! The wife of the first grandson of the family! Welcome!",
     "Afreena": "Afreena DD! The big DD of the whole family!",
     "Habeeb": "Jiju! Yes Giju with the J! The man who married the biggest DD of the family! Welcome!",
-    "Ainy": "Ainy DD! The second biggest DD of the family! Welcome!",
+    "Ainy": "Ainy DD! The second eldest DD of the family! Welcome!",
     "Ayaz": "Ayaz Giju! The man who married the second biggest DD in the family!",
     "Fathima": "Uhm....Wel..welcome...the.......jreoihifdgjer",
     "Ahmed": "Ahmed! One of the cool dude in the family! Welcome!",
-    "Lubaid": "Lulu Boya! The second biggest grandson of the family! Welcome!",
-    "Jahan": "Jahan Babhi! The wife of the 2nd biggest grandson! Welcome!",
+    "Lubaid": "Lulu Boya! The second eldest grandson of the family! Welcome!",
+    "Jahan": "Jahan Babhi! The wife of the 2nd eldest grandson! Welcome!",
     "Lubaba": "Baba DD! My favorite DD! (Don't say other DDs!) Welcome!",
     "Shahid": "Shahid Gju! The husband of my favorite DD! (Don't tell anyone!) Welcome!",
     "Muzna": "Ayyyyyyy! My one and only sister! Welcome to the board!",
@@ -47,13 +47,13 @@ personal_messages = {
     "Mehreen": "The first daughter of Buddy! Welcome!",
     "Noureen": "Loading...",
     "Mahir": "Solider! My defender! Welcome to the website!",
-    "Mariyam": "The smallest daughter of buddy! Welcome!",
+    "Mariyam": "The youngest daughter of buddy! Welcome!",
     "Muhammad": "One of the coolest dude in the family! Welcome!",
-    "Malhan": "The smallest one in the family so far! Welcome!",
+    "Malhan": "The youngest one in the family so far! Welcome!",
     "Nafa": "Nafa! The daughter of the biggest Pulli in the family!",
     "Nazneen": "Nazneen! The daughter of the biggest grandson of the family! Welcome!",
-    "Haya": "Haya! The biggest daughter of Jiju!",
-    "Yahya": "The biggest grandson of Puppi!!",
+    "Haya": "Haya! The eldest daughter of Jiju!",
+    "Yahya": "The eldest grandson of Puppi!!",
     "Hannee": "Hannee! The second daughter of Afreena DD! Welcome!",
     "Hala": "Hala Wallah 3amak Abdullah! Welcome!",
     "Eesa": "Eesa! The biggest son of Ayaz Jiju!",
@@ -155,5 +155,6 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
