@@ -16,49 +16,50 @@ user_name = user_name.strip().capitalize()
 
 # --- PERSONAL MESSAGES ---
 personal_messages = {
-    "Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
-    "Maimoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
+"Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
+    "Mymoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
     "Raihana": "Puppi! The first child and the first daughter! Welcome!",
     "Abbas": "Puppa! The man who married the first daughter of HF!",
     "Lubaina": "Small Puppi! Welcome! The second child of HF!",
     "Kaleem": "Uncle! The legend who married the second child of HF! Welcome!",
-    "Momin": "Abee!! You are the coolest man alive right now! My father! Welcome!",
-    "Naziya": "EMMA! My MOTHER! The best mom ever! Welcome!",
-    "Matheen": "Buddy! Buddy! The busiest son of HF! Welcome!",
+    "Momin": "Abee!! You are the coolest man alive right now! My father! The first son of HF! Welcome!",
+    "Naziya": "EMMA! My MOTHER! The best mom ever! Welcome to the website! I love you! The women who married the best man alive!",
+    "Matheen": "Buddy! Buddy! The smallest son and the busiest son of HF! Welcome!",
     "Reshma": "Mami! The first wife of Buddy! Welcome!",
     "Shahina": "Mimi! The second wife of Buddy! Welcome!",
-    "Mohsin": "APUN! Another legend! Welcome!",
+    "Mohsin": "APUN! Another legend! When people hear his name they run the other way! Welcome!",
     "Affan": "Affan Boya! The first grandson in the family! Welcome!",
-    "Nisha": "Nisha Babhi! Welcome!",
+    "Nisha": "Nisha Babhi! The wife of the first grandson of the family! Welcome!",
     "Afreena": "Afreena DD! The big DD of the whole family!",
-    "Habeeb": "Jiju! Welcome!",
-    "Ainy": "Ainy DD! Welcome!",
-    "Ayaz": "Ayaz Giju! Welcome!",
-    "Fathima": "Uhm.... Wel... welcome...",
-    "Ahmed": "Ahmed! One of the cool dudes in the family!",
-    "Lubaid": "Lulu Boya! Welcome!",
-    "Jahan": "Jahan Babhi! Welcome!",
-    "Lubaba": "Baba DD! My favorite DD!",
-    "Shahid": "Shahid Giju! Welcome!",
-    "Muzna": "Ayyyyyyy! My one and only sister!",
+    "Habeeb": "Jiju! Yes Giju with the J! The man who married the biggest DD of the family! Welcome!",
+    "Ainy": "Ainy DD! The second biggest DD of the family! Welcome!",
+    "Ayaz": "Ayaz Giju! The man who married the second biggest DD in the family!",
+    "Fathima": "Uhm....Wel..welcome...the.......jreoihifdgjer",
+    "Ahmed": "Ahmed! One of the cool dude in the family! Welcome!",
+    "Lubaid": "Lulu Boya! The second biggest grandson of the family! Welcome!",
+    "Jahan": "Jahan Babhi! The wife of the 2nd biggest grandson! Welcome!",
+    "Lubaba": "Baba DD! My favorite DD! (Don't say other DDs!) Welcome!",
+    "Shahid": "Shahid Gju! The husband of my favorite DD! (Don't tell anyone!) Welcome!",
+    "Muzna": "Ayyyyyyy! My one and only sister! Welcome to the board!",
     "Muzayyin": "Really?",
-    "Mazin": "Ayyy Mazin!",
-    "Mizan": "My smallest brother!!!! I LOVE YOU!",
+    "Mazin": "Ayyy Mazin! My only brother! oh wait........",
+    "Mizan": "My smallest brother!!!! Mizannnnnn! I LOVE YOU!",
     "Mehreen": "The first daughter of Buddy! Welcome!",
-    "Noureen": "Welcome to the family!",
-    "Mahir": "Soldier! My defender! Welcome!",
-    "Muhammad": "One of the coolest dudes in the family!",
-    "Mariyam": "The smallest daughter of Buddy! Welcome!",
-    "Nafa": "The daughter of the biggest Pulli in the family!",
-    "Nazneen": "The daughter of the biggest grandson of the family!",
-    "Haya": "The biggest daughter of Jiju!",
+    "Noureen": "Loading...",
+    "Mahir": "Solider! My defender! Welcome to the website!",
+    "Maryiam": "The smallest daughter of buddy! Welcome!",
+    "Muhammad": "One of the coolest dude in the family! Welcome!",
+    "Malhan": "The smallest one in the family so far! Welcome!",
+    "Nafa": "Nafa! The daughter of the biggest Pulli in the family!",
+    "Nazneen": "Nazneen! The daughter of the biggest grandson of the family! Welcome!",
+    "Haya": "Haya! The biggest daughter of Jiju!",
     "Yahya": "The biggest grandson of Puppi!!",
-    "Hannee": "The second daughter of Afreena DD!",
-    "Hala": "Hala Wallah 3amak Abdullah!",
-    "Eesa": "The biggest son of Ayaz Jiju!",
-    "Rabi": "Fan! Fan! Only me and Rabi know what that means!",
-    "Huma": "Lulu Boya's first daughter and soon to be a big sister!",
-    "Shanaya": "Hide & Seek champion! Best seeker and hider!"
+    "Hannee": "Hannee! The second daughter of Afreena DD! Welcome!",
+    "Hala": "Hala Wallah 3amak Abdullah! Welcome!",
+    "Eesa": "Eesa! The biggest son of Ayaz Jiju!",
+    "Rabi": "Rabi! Fan! Fan! only me and Rabi knows what the code 'Fan' means!",
+    "Huma": "Huma! Lulu Boya's first daughter and soon to be a big sister! Welcome!",
+    "Shanaya": "Shannu! Hide & Seek champion! Best seeker and best hider!"
 }
 
 # --- ACCESS CONTROL ---
@@ -81,7 +82,7 @@ st.divider()
 # ================= FAMILY TREE =================
 st.header("🌳 Family Tree")
 
-with st.expander("👴 Hakeem ❤️ Maimoona", expanded=True):
+with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
 
     st.markdown("### 👩 Raihana ❤️ Abbas")
     st.markdown("- 👦 **Affan** ❤️ Nisha")
@@ -154,3 +155,4 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
