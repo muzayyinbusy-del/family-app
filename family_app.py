@@ -122,6 +122,10 @@ if user_name not in allowed_names:
 # --- SHOW PERSONAL MESSAGE ---
 st.success(personal_messages[user_name])
 
+# 🔔 NEWS POPUP (ADD THIS)
+st.toast("📰 New Hakeem Family News available! Click the sidebar 👈", icon="👀")
+st.info("👈 Don’t miss today’s Hakeem Family News in the sidebar!")
+
 st.divider()
 
 # ================= FAMILY TREE =================
