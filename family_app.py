@@ -11,45 +11,45 @@ st.title("👨‍👩‍👧‍👦 Hakim Family")
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name")
 
-# Normalize name: first letter capital
+# Normalize name
 user_name = user_name.strip().capitalize()
 
 # Personalized messages
 personal_messages = {
     "Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
     "Mymoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
-    "Raihana": "Puppi! The first child and the first daughter! Welcome!",
-    "Abbas": "Puppa! The man who married the first daughter of HF!",
-    "Lubaina": "Small Puppi! Welcome! The second child of HF!",
-    "Kaleem": "Uncle! The legend who married the second child of HF! Welcome!",
-    "Momin": "Abee!! You are the coolest man alive right now! My father! Welcome!",
-    "Naziya": "EMMA! My MOTHER! The best mom ever! Welcome!",
-    "Matheen": "Buddy! Buddy! The smallest son of HF! Welcome!",
-    "Reshma": "Mami! The first wife of Buddy! Welcome!",
-    "Shahina": "Mimi! The second wife of Buddy! Welcome!",
-    "Mohsin": "APUN! Another legend! Welcome!",
-    "Affan": "Affan Boya! The first grandson in the family! Welcome!",
-    "Nisha": "Nisha Babhi! Welcome!",
-    "Afreena": "Afreena DD! The big DD of the whole family!",
-    "Habeeb": "Jiju! Welcome!",
-    "Ainy": "Ainy DD! Welcome!",
-    "Ayaz": "Ayaz Giju! Welcome!",
-    "Fathima": "Uhm....Wel..welcome...",
-    "Ahmed": "Ahmed! Welcome!",
-    "Lubaid": "Lulu Boya! Welcome!",
-    "Jahan": "Jahan Babhi! Welcome!",
-    "Lubaba": "Baba DD! My favorite DD!",
-    "Shahid": "Shahid Giju! Welcome!",
-    "Muzna": "Ayyyyy! My one and only sister!",
+    "Raihana": "Puppi! The first child and the first daughter!",
+    "Abbas": "Puppa! Welcome!",
+    "Lubaina": "Small Puppi! Welcome!",
+    "Kaleem": "Uncle! Welcome!",
+    "Momin": "Abee!! My father! Welcome!",
+    "Naziya": "EMMA! My MOTHER!",
+    "Matheen": "Buddy! Welcome!",
+    "Reshma": "Mami! Welcome!",
+    "Shahina": "Mimi! Welcome!",
+    "Mohsin": "APUN! Legend!",
+    "Affan": "First grandson!",
+    "Nisha": "Babhi! Welcome!",
+    "Afreena": "Big DD!",
+    "Habeeb": "Jiju!",
+    "Ainy": "DD!",
+    "Ayaz": "Giju!",
+    "Fathima": "Welcome!",
+    "Ahmed": "Welcome!",
+    "Lubaid": "Boya!",
+    "Jahan": "Babhi!",
+    "Lubaba": "Favorite DD 👀",
+    "Shahid": "Giju!",
+    "Muzna": "My sister!",
     "Muzayyin": "Really?",
-    "Mazin": "Ayyy Mazin!",
-    "Mizan": "My smallest brother! I LOVE YOU!",
+    "Mazin": "Brother!",
+    "Mizan": "Smallest brother!",
     "Mehreen": "Welcome!",
     "Noureen": "Loading...",
-    "Mahir": "Soldier! Welcome!",
+    "Mahir": "Soldier!",
     "Mariyam": "Welcome!",
     "Muhammad": "Welcome!",
-    "Malhan": "Welcome!",
+    "Malhan": "Smallest one!",
     "Nafa": "Welcome!",
     "Nazneen": "Welcome!",
     "Haya": "Welcome!",
@@ -57,7 +57,7 @@ personal_messages = {
     "Hannee": "Welcome!",
     "Hala": "Welcome!",
     "Eesa": "Welcome!",
-    "Rabi": "Fan! Fan!",
+    "Rabi": "Fan!",
     "Huma": "Welcome!",
     "Shanaya": "Hide & Seek champion!"
 }
@@ -75,6 +75,7 @@ else:
 
     st.divider()
 
+    # --- GROUP VIEW ---
     family = {
         "Parents": ["Hakeem", "Mymoona"],
         "Children": [
@@ -101,8 +102,33 @@ else:
     )
 
     st.subheader(group)
-
     for name in family[group]:
         st.write("•", name)
 
+    st.divider()
 
+    # --- FAMILY TREE ---
+    st.subheader("🌳 Family Tree")
+
+    tree = """
+    digraph family {
+        Hakeem -> Mymoona
+        Hakeem -> Lubaina
+        Hakeem -> Momin
+        Hakeem -> Matheen
+        Hakeem -> Mohsin
+
+        Raihana -> Affan
+        Raihana -> Afreena
+
+        Affan -> Nafa
+        Afreena -> Hannee
+
+        Momin -> Muzna
+        Momin -> Muzayyin
+        Momin -> Mazin
+        Momin -> Mizan
+    }
+    """
+
+    st.graphviz_chart(tree)
