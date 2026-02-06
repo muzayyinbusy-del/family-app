@@ -47,7 +47,7 @@ personal_messages = {
     "Mehreen": "The first daughter of Buddy! Welcome!",
     "Noureen": "Loading...",
     "Mahir": "Solider! My defender! Welcome to the website!",
-    "Maryiam": "The smallest daughter of buddy! Welcome!",
+    "Mariyam": "The smallest daughter of buddy! Welcome!",
     "Muhammad": "One of the coolest dude in the family! Welcome!",
     "Malhan": "The smallest one in the family so far! Welcome!",
     "Nafa": "Nafa! The daughter of the biggest Pulli in the family!",
@@ -155,4 +155,5 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
