@@ -1,12 +1,12 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Family Viewer",
-    page_icon="👨‍👩‍👧‍👦",
+    page_title="Hakim Family Tree",
+    page_icon="🌳",
     layout="centered"
 )
 
-st.title("👨‍👩‍👧‍👦 Hakim Family")
+st.title("🌳 Hakim Family Tree")
 
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name")
@@ -14,121 +14,113 @@ user_name = st.text_input("Enter your name")
 # Normalize name
 user_name = user_name.strip().capitalize()
 
-# Personalized messages
+# --- PERSONAL MESSAGES ---
 personal_messages = {
-    "Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
-    "Mymoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
-    "Raihana": "Puppi! The first child and the first daughter!",
-    "Abbas": "Puppa! Welcome!",
-    "Lubaina": "Small Puppi! Welcome!",
-    "Kaleem": "Uncle! Welcome!",
-    "Momin": "Abee!! My father! Welcome!",
-    "Naziya": "EMMA! My MOTHER!",
-    "Matheen": "Buddy! Welcome!",
-    "Reshma": "Mami! Welcome!",
-    "Shahina": "Mimi! Welcome!",
-    "Mohsin": "APUN! Legend!",
-    "Affan": "First grandson!",
-    "Nisha": "Babhi! Welcome!",
-    "Afreena": "Big DD!",
-    "Habeeb": "Jiju!",
-    "Ainy": "DD!",
-    "Ayaz": "Giju!",
-    "Fathima": "Welcome!",
-    "Ahmed": "Welcome!",
-    "Lubaid": "Boya!",
-    "Jahan": "Babhi!",
-    "Lubaba": "Favorite DD 👀",
-    "Shahid": "Giju!",
-    "Muzna": "My sister!",
-    "Muzayyin": "Really?",
-    "Mazin": "Brother!",
-    "Mizan": "Smallest brother!",
-    "Mehreen": "Welcome!",
-    "Noureen": "Loading...",
-    "Mahir": "Soldier!",
-    "Mariyam": "Welcome!",
-    "Muhammad": "Welcome!",
-    "Malhan": "Smallest one!",
-    "Nafa": "Welcome!",
-    "Nazneen": "Welcome!",
-    "Haya": "Welcome!",
-    "Yahya": "Welcome!",
-    "Hannee": "Welcome!",
-    "Hala": "Welcome!",
-    "Eesa": "Welcome!",
-    "Rabi": "Fan!",
-    "Huma": "Welcome!",
-    "Shanaya": "Hide & Seek champion!"
+    "Hakeem": "The legend who started this family! May Allah have mercy on him. Ameen 🤍",
+    "Mymoona": "The heart of the family 💖",
+    "Momin": "Abee! The coolest dad ever 😎",
+    "Naziya": "Emma! The best mom ever 💕",
+    "Muzayyin": "Really? 😏",
 }
 
-# ---- SHOW REST ONLY AFTER NAME IS ENTERED ----
 if not user_name:
     st.info("👆 Please enter your name to continue")
-
 else:
-    message = personal_messages.get(
-        user_name,
-        f"Welcome {user_name}! We're happy to have you here 😊"
+    st.success(
+        personal_messages.get(
+            user_name,
+            f"Welcome {user_name}! We're happy to have you here 😊"
+        )
     )
-    st.success(message)
 
     st.divider()
 
-    # --- GROUP VIEW ---
-    family = {
+    # ================= FAMILY TREE =================
+
+    st.header("🌳 Family Tree")
+
+    with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
+
+        # --- CHILD 1 ---
+        st.markdown("### 👩 Raihana ❤️ Abbas")
+        with st.container():
+            st.markdown("- 👦 **Affan** ❤️ Nisha")
+            st.markdown("  - 👧 Nafa")
+            st.markdown("  - 👧 Nazneen")
+
+            st.markdown("- 👧 **Afreena** ❤️ Habeeb")
+            st.markdown("  - 👧 Haya")
+            st.markdown("  - 👧 Hannee")
+            st.markdown("  - 👧 Hala")
+            st.markdown("  - 👦 Yahya")
+
+            st.markdown("- 👧 **Ainy** ❤️ Ayaz")
+            st.markdown("  - 👦 Eesa")
+            st.markdown("  - 👦 Rabi")
+
+        st.divider()
+
+        # --- CHILD 2 ---
+        st.markdown("### 👩 Lubaina ❤️ Kaleem")
+        with st.container():
+            st.markdown("- 👧 Fathima")
+            st.markdown("- 👦 Ahmed")
+            st.markdown("- 👦 **Lubaid** ❤️ Jahan")
+            st.markdown("  - 👧 Huma")
+            st.markdown("- 👧 **Lubaba** ❤️ Shahid")
+            st.markdown("  - 👧 Shanaya")
+
+        st.divider()
+
+        # --- CHILD 3 ---
+        st.markdown("### 👨 Momin ❤️ Naziya")
+        with st.container():
+            st.markdown("- 👧 Muzna")
+            st.markdown("- 👦 Muzayyin")
+            st.markdown("- 👦 Mazin")
+            st.markdown("- 👦 Mizan")
+
+        st.divider()
+
+        # --- CHILD 4 ---
+        st.markdown("### 👨 Mohsin")
+        st.markdown("- Single")
+
+        st.divider()
+
+        # --- CHILD 5 ---
+        st.markdown("### 👨 Matheen ❤️ Reshma & Shahina")
+        with st.container():
+            st.markdown("- 👧 **Mehreen** ❤️ Noureen")
+            st.markdown("- 👦 Mahir")
+            st.markdown("- 👦 Mohammad")
+            st.markdown("- 👧 Mariyam")
+
+    st.divider()
+
+    # ================= GROUP VIEW =================
+
+    st.header("👨‍👩‍👧‍👦 View by Generation")
+
+    family_groups = {
         "Parents": ["Hakeem", "Mymoona"],
         "Children": [
-            "Raihana", "Abbas", "Lubaina", "Kaleem",
-            "Momin", "Naziya", "Matheen", "Shahina",
-            "Reshma", "Mohsin"
+            "Raihana", "Lubaina", "Momin", "Mohsin", "Matheen",
+            "Abbas", "Kaleem", "Naziya", "Reshma", "Shahina"
         ],
         "Grandchildren": [
-            "Affan", "Nisha", "Afreena", "Habeeb", "Ainy",
-            "Ayaz", "Fathima", "Ahmed", "Lubaid", "Jahan",
-            "Lubaba", "Shahid", "Muzna", "Muzayyin",
-            "Mazin", "Mizan", "Mehreen", "Noureen",
-            "Mahir", "Mariyam", "Muhammad", "Malhan"
+            "Affan", "Afreena", "Ainy", "Fathima", "Ahmed",
+            "Lubaid", "Lubaba", "Muzna", "Muzayyin",
+            "Mazin", "Mizan", "Mehreen", "Mahir",
+            "Mohammad", "Mariyam"
         ],
         "Great-Grandchildren": [
-            "Nafa", "Nazneen", "Haya", "Yahya", "Hannee",
-            "Hala", "Eesa", "Rabi", "Huma", "Shanaya"
+            "Nafa", "Nazneen", "Haya", "Hannee", "Hala",
+            "Yahya", "Eesa", "Rabi", "Huma", "Shanaya"
         ]
     }
 
-    group = st.selectbox(
-        "Which group do you want to see?",
-        list(family.keys())
-    )
+    group = st.selectbox("Select a group", family_groups.keys())
 
-    st.subheader(group)
-    for name in family[group]:
+    for name in family_groups[group]:
         st.write("•", name)
-
-    st.divider()
-
-    # --- FAMILY TREE ---
-    st.subheader("🌳 Family Tree")
-
-    tree = """
-    digraph family {
-        Hakeem -> Mymoona
-        Hakeem -> Lubaina
-        Hakeem -> Momin
-        Hakeem -> Matheen
-        Hakeem -> Mohsin
-
-        Raihana -> Affan
-        Raihana -> Afreena
-
-        Affan -> Nafa
-        Afreena -> Hannee
-
-        Momin -> Muzna
-        Momin -> Muzayyin
-        Momin -> Mazin
-        Momin -> Mizan
-    }
-    """
-
-    st.graphviz_chart(tree)
