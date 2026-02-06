@@ -17,7 +17,7 @@ user_name = user_name.strip().capitalize()
 # Personalized messages
 personal_messages = {
     "Hakeem": "The legend who started this family! May Allah have mercy on him! Ameen!",
-    "Maimoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
+    "Mymoona": "AMITOTO TO TO TO TO TO TOLE TO TO! The mother of the family!",
     "Raihana": "Puppi! The first child and the first daughter! Welcome!",
     "Abbas": "Puppa! The man who married the first daughter of HF!",
     "Lubaina": "Small Puppi! Welcome! The second child of HF!",
@@ -76,7 +76,7 @@ else:
     st.divider()
 
     family = {
-        "Parents": ["Hakeem", "Maimoona"],
+        "Parents": ["Hakeem", "Mymoona"],
         "Children": [
             "Raihana", "Abbas", "Lubaina", "Kaleem",
             "Momin", "Naziya", "Matheen", "Shahina",
@@ -104,4 +104,5 @@ else:
 
     for name in family[group]:
         st.write("•", name)
+
 
