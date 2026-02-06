@@ -26,6 +26,25 @@ total_coming = len(coming_soon)
 
 st.title("🌳 Hakim Family Tree")
 
+# ================= FAMILY NEWS =================
+with st.sidebar:
+    st.header("📰 Hakeem Family News")
+
+    st.markdown("""
+    🟢 **Today**
+    - MeemNoon Family did Umrah! 🌐
+
+    🟡 **Yesterday**
+    - The development of this website began 🔢
+
+    🔵 **Upcoming**
+    - Noni Moni Soon!
+    """)
+
+    st.divider()
+    st.caption("Updated by Muzayyin News 👑")
+
+
 st.markdown(
     f"""
     <div style="position:fixed; top:80px; right:20px; 
