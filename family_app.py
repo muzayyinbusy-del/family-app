@@ -26,7 +26,7 @@ total_coming = len(coming_soon)
 
 st.title("🌳 Hakim Family Tree")
 
-# ================= FAMILY NEWS =================
+# ================= FAMILY NEWS + COUNTER =================
 with st.sidebar:
     st.header("📰 Hakeem Family News")
 
@@ -42,21 +42,15 @@ with st.sidebar:
     """)
 
     st.divider()
+
+    st.subheader("📊 Family Count")
+    st.markdown(f"""
+    👨‍👩‍👧‍👦 **Family Members:** {total_current}  
+    👶 **Coming Soon:** {total_coming}
+    """)
+
+    st.divider()
     st.caption("Updated by Muzayyin News 👑")
-
-
-st.markdown(
-    f"""
-    <div style="position:fixed; top:80px; right:20px; 
-                background-color:#fde68a; padding:15px;
-                border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1)">
-        👨‍👩‍👧‍👦 <b>Family Members:</b> {total_current}<br>
-        👶 <b>Coming Soon:</b> {total_coming}
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name")
