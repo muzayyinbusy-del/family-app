@@ -8,18 +8,6 @@ st.set_page_config(
 
 st.title("🌳 Hakim Family Tree")
 
-st.markdown(
-    f"""
-    <div style="position:fixed; top:80px; right:20px; 
-                background-color:#f0f2f6; padding:15px;
-                border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1)">
-        👨‍👩‍👧‍👦 <b>Family Members:</b> {total_current}<br>
-        👶 <b>Coming Soon:</b> {total_coming}
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name")
@@ -74,24 +62,7 @@ personal_messages = {
     "Huma": "Huma! Lulu Boya's first daughter and soon to be a big sister! Welcome!",
     "Shanaya": "Shannu! Hide & Seek champion! Best seeker and best hider!"
 }
-# --- FAMILY COUNTER DATA ---
-current_members = {
-    "Hakeem","Mymoona","Raihana","Abbas","Lubaina","Kaleem","Momin","Naziya",
-    "Matheen","Reshma","Shahina","Mohsin","Affan","Nisha","Afreena","Habeeb",
-    "Ainy","Ayaz","Fathima","Ahmed","Lubaid","Jahan","Lubaba","Shahid",
-    "Muzna","Muzayyin","Mazin","Mizan","Mehreen","Mahir","Mariyam",
-    "Muhammad","Malhan","Nafa","Nazneen","Haya","Yahya","Hannee",
-    "Hala","Eesa","Rabi","Huma","Shanaya"
-}
 
-coming_soon = {
-    "Noureen"  # add more names here later
-    "Lulu Boya's child"
-    "Ainy DD's child"
-}
-
-total_current = len(current_members)
-total_coming = len(coming_soon)
 
 
 # --- ACCESS CONTROL ---
@@ -187,6 +158,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
