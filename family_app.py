@@ -35,7 +35,7 @@ personal_messages = {
     "Ainy": "Ainy DD! The second eldest DD of the family! Welcome!",
     "Ayaz": "Ayaz Giju! The man who married the second biggest DD in the family!",
     "Fathima": "Uhm....Wel..welcome...the.......jreoihifdgjer",
-    "Ahmed": "Ahmed! One of the cool dude in the family! Welcome!",
+    "Ahmed": "Ahmed! Cool dude in the family! Welcome!",
     "Lubaid": "Lulu Boya! The second eldest grandson of the family! Welcome!",
     "Jahan": "Jahan Babhi! The wife of the 2nd eldest grandson! Welcome!",
     "Lubaba": "Baba DD! My favorite DD! (Don't say other DDs!) Welcome!",
@@ -48,7 +48,7 @@ personal_messages = {
     "Noureen": "Loading...",
     "Mahir": "Solider! My defender! Welcome to the website!",
     "Mariyam": "The youngest daughter of buddy! Welcome!",
-    "Muhammad": "One of the coolest dude in the family! Welcome!",
+    "Muhammad": "Muhammad! Cool dude in the family! Welcome!",
     "Malhan": "The youngest one in the family so far! Welcome!",
     "Nafa": "Nafa! The daughter of the eldest Pulli in the family!",
     "Nazneen": "Nazneen! The daughter of the eldest grandson of the family! Welcome!",
@@ -155,6 +155,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
