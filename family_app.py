@@ -146,8 +146,8 @@ family_groups = {
         "Mazin", "Mahir", "Mizan", "Malhan"
     ],
     "Great-Grandchildren": [
-        "Nafa", "Nazneen", "Haya", "Hannee", "Hala",
-        "Yahya", "Eesa", "Rabi", "Huma", "Shanaya"
+        "Haya", "Nafa", "Nazneen",  "Yahya", "Shanaya", "Eesa", "Hannee", "Hala",
+         "Rabi", "Huma", 
     ]
 }
 
@@ -155,6 +155,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
