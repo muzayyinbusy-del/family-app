@@ -105,7 +105,7 @@ with st.sidebar:
 
     st.divider()
     st.caption("Updated by Muzayyin News 👑")
-    st.caption("Version: 1.3.0 <-- sooo cooool")
+    st.caption("Version: 1.4.0 <-- sooo cooool")
 
 # --- NAME INPUT ---
 user_name = st.text_input(
@@ -348,4 +348,5 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
