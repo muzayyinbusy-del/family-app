@@ -1,7 +1,11 @@
+import json
+import time
+import random
 import streamlit as st
 import os
 
 VISITS_FILE = "visits.txt"
+
 
 def get_total_visits():
     if not os.path.exists(VISITS_FILE):
@@ -17,6 +21,26 @@ def get_total_visits():
         f.write(str(visits))
 
     return visits
+
+
+LEADERBOARD_FILE = "emoji_leaderboard.json"
+
+
+def load_leaderboard():
+    if not os.path.exists(LEADERBOARD_FILE):
+        return {}
+    with open(LEADERBOARD_FILE, "r") as f:
+        return json.load(f)
+
+
+def save_score(name, score):
+    leaderboard = load_leaderboard()
+
+    if name not in leaderboard or score < leaderboard[name]:
+        leaderboard[name] = round(score, 3)
+
+        with open(LEADERBOARD_FILE, "w") as f:
+            json.dump(leaderboard, f, indent=2)
 
 
 st.set_page_config(
@@ -74,7 +98,7 @@ with st.sidebar:
     👨‍👩‍👧‍👦 **Family Members:** {total_current}  
     👶 **Coming Soon:** {total_coming}
     """)
-    
+
     st.divider()
     st.subheader("👀 Website Visits")
     st.markdown(f"**Total Visits:** {total_visits}")
@@ -84,7 +108,8 @@ with st.sidebar:
     st.caption("Version: 1.3.0 <-- sooo cooool")
 
 # --- NAME INPUT ---
-user_name = st.text_input("Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :))")
+user_name = st.text_input(
+    "Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :))")
 
 # Normalize name
 user_name = user_name.strip().capitalize()
@@ -153,6 +178,89 @@ if user_name not in allowed_names:
 # --- SHOW PERSONAL MESSAGE ---
 st.success(personal_messages[user_name])
 
+st.divider()
+st.header("🎮 Tap the Tree 🌳")
+
+if "game_started" not in st.session_state:
+    st.session_state.game_started = False
+    st.session_state.start_time = None
+    st.session_state.penalty = 0
+    st.session_state.emojis = []
+
+
+if not st.session_state.game_started:
+    if st.button("▶️ Start Game", use_container_width=True):
+        st.session_state.game_started = True
+        st.session_state.start_time = time.time() + random.uniform(2, 4)
+        st.session_state.penalty = 0
+        emojis = ["😈", "👀", "💣", "🍌", "🐸", "🌳"]
+        random.shuffle(emojis)
+        st.session_state.emojis = emojis
+        st.rerun()
+
+if st.session_state.game_started:
+
+    now = time.time()
+
+    # Waiting phase
+    if now < st.session_state.start_time:
+        st.info("⏳ Get ready...")
+    else:
+        st.write("👇 Tap the 🌳 as fast as you can!")
+
+        emojis = st.session_state.emojis
+
+        cols = st.columns(3)
+
+        for i, emoji in enumerate(emojis):
+            with cols[i % 3]:
+                if st.button(
+                    emoji,
+                    key=f"emoji_{i}",
+                    use_container_width=True
+                ):
+                    reaction_time = time.time() - st.session_state.start_time
+
+                    # ❌ Wrong emoji
+                    if emoji != "🌳":
+                        st.session_state.penalty += 0.5
+                        st.warning("❌ Wrong emoji! +0.5s penalty")
+                        st.rerun()
+
+                    # ✅ Correct emoji
+                    else:
+                        final_score = reaction_time + st.session_state.penalty
+                        save_score(user_name, final_score)
+
+                        st.success(
+                            f"🌳 Nice! Your time: {final_score:.3f} seconds"
+                        )
+
+                        st.session_state.game_started = False
+                        st.rerun()
+
+st.subheader("🏆 Fastest Fingers Leaderboard")
+
+leaderboard = load_leaderboard()
+
+if leaderboard:
+    sorted_scores = sorted(leaderboard.items(), key=lambda x: x[1])[:10]
+
+    for i, (name, score) in enumerate(sorted_scores, start=1):
+        if i == 1:
+            medal = "🥇"
+        elif i == 2:
+            medal = "🥈"
+        elif i == 3:
+            medal = "🥉"
+        else:
+            medal = "👑"
+
+        st.write(f"{medal} {i}. **{name}** — {score:.3f}s")
+else:
+    st.info("No scores yet. Be the first to tap the 🌳 😏")
+
+
 # 🔔 NEWS POPUP (ADD THIS)
 st.toast("📰 New Hakeem Family News available! Click the sidebar 👈", icon="👀")
 st.info("👈 Don’t miss today’s Hakeem Family News in the sidebar!")
@@ -178,7 +286,7 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.markdown("  - --> 👦 Rabi")
 
     st.divider()
-    
+
     st.markdown("### 👩 Lubaina ❤️ Kaleem")
     st.markdown("- 👦 **Lubaid** ❤️ Jahan")
     st.markdown("  - --> 👧 Huma")
@@ -186,9 +294,6 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.markdown("  - --> 👧 Shanaya")
     st.markdown("- 👧 Fathima")
     st.markdown("- 👦 Ahmed")
-
-   
-
 
     st.divider()
 
@@ -210,7 +315,6 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.markdown("- 👧 Mariyam")
     st.markdown("- 👦 Muhammad")
     st.markdown("- 👦 Mahir")
-    
 
 
 st.divider()
@@ -240,15 +344,3 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
-
-
-
-
-
-
-
-
-
-
-
-
