@@ -247,7 +247,7 @@ st.subheader("🏆 Fastest Fingers Leaderboard")
 leaderboard = load_leaderboard()
 
 if leaderboard:
-    sorted_scores = sorted(leaderboard.items(), key=lambda x: x[1])[:10]
+    sorted_scores = sorted(leaderboard.items(), key=lambda x: x[1])[:50]
 
     for i, (name, score) in enumerate(sorted_scores, start=1):
         if i == 1:
@@ -329,14 +329,23 @@ st.header("👨‍👩‍👧‍👦 View by Generation")
 family_groups = {
     "Parents": ["Hakeem ❤️ Mymoona "],
     "Children": [
-        "Raihana ❤️ Abbas", "Lubaina ❤️ Kaleem", "Momin ❤️ Naziya", "Mohsin", "Matheen ❤️ Reshma & Shahina",
+        "Raihana", "Lubaina", "Momin", "Mohsin", "Matheen",
+
+    ],
+    "Children (In-Laws)": [
+        "Abbas (Raihana's husband)", "Kaleem (Lubaina's husband)", "Naziya (Momin's wife)", "Mohsin", "Reshma (Matheen's first wife)", "Shahina (Matheen's second wife)"
 
     ],
     "Grandchildren": [
-        "Affan ❤️ Nisha", "Afreena ❤️ Habeeb", "Lubaid ❤️ Jahan", "Lubaba ❤️ Shahid",
-        "Ainy ❤️ Ayaz", "Muzayyin", "Fathima", "Mehreen ❤️ Noureen",
+        "Affan", "Afreena", "Lubaid", "Lubaba",
+        "Ainy", "Muzayyin", "Fathima", "Mehreen",
         "Mariyam", "Muzna", "Muhammad", "Ahmed",
         "Mazin", "Mahir", "Mizan", "Malhan"
+    ],
+
+    "Grandchildren (In-Laws)": [
+        "Nisha (Affan's wife)", "Habeeb (Afreena's husband)", "Jahan (Lubaid's wife)", "Shahid (Lubaba's husband)", "Ayaz (Ainy's husband)", "Noureen (Mehreen's husband)"
+
     ],
     "Great-Grandchildren": [
         "Haya", "Nafa", "Nazneen",  "Yahya", "Shanaya", "Eesa", "Hannee", "Hala",
@@ -348,5 +357,6 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
