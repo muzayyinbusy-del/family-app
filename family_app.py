@@ -31,8 +31,12 @@ with st.sidebar:
     st.header("📰 Hakeem Family News")
 
     st.markdown("""
+
+    🔵 **Upcoming**
+    - Noni Moni Soon!
+    
     🟢 **07/02/2026**
-    - Muhammad shows off his driving skils! 😎
+    - Muhammad shows off his driving skills! 😎
     
     🟢 **06/02/2026**
     - MeemNoon Family did Umrah!
@@ -40,8 +44,6 @@ with st.sidebar:
     🟡 **05/02/2026**
     - The development of this website began!
 
-    🔵 **Upcoming**
-    - Noni Moni Soon!
     """)
 
     st.divider()
@@ -213,6 +215,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
