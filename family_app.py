@@ -31,6 +31,9 @@ with st.sidebar:
     st.header("📰 Hakeem Family News")
 
     st.markdown("""
+    🟢 **07/02/2026**
+    - Muhammad shows off his driving skils! 😎
+    
     🟢 **06/02/2026**
     - MeemNoon Family did Umrah!
 
@@ -210,6 +213,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
