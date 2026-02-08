@@ -31,10 +31,10 @@ with st.sidebar:
     st.header("📰 Hakeem Family News")
 
     st.markdown("""
-    🟢 **Today**
+    🟢 **06/02/2026**
     - MeemNoon Family did Umrah! 🌐
 
-    🟡 **Yesterday**
+    🟡 **05/02/2026**
     - The development of this website began 🔢
 
     🔵 **Upcoming**
@@ -51,6 +51,7 @@ with st.sidebar:
 
     st.divider()
     st.caption("Updated by Muzayyin News 👑")
+    st.caption("Version: 1.2.6 <-- sooo cooool")
 
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name")
@@ -204,3 +205,4 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
