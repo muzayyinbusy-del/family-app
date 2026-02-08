@@ -105,11 +105,11 @@ with st.sidebar:
 
     st.divider()
     st.caption("Updated by Muzayyin News 👑")
-    st.caption("Version: 1.4.0 <-- sooo cooool")
+    st.caption("Version: 1.4.1 <-- sooo cooool")
 
 # --- NAME INPUT ---
 user_name = st.text_input(
-    "Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :))")
+    "Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :) )")
 
 # Normalize name
 user_name = user_name.strip().capitalize()
@@ -333,7 +333,7 @@ family_groups = {
 
     ],
     "Children (In-Laws)": [
-        "Abbas (Raihana's husband)", "Kaleem (Lubaina's husband)", "Naziya (Momin's wife)", "Mohsin", "Reshma (Matheen's first wife)", "Shahina (Matheen's second wife)"
+        "Abbas (Raihana's husband)", "Kaleem (Lubaina's husband)", "Naziya (Momin's wife)", "Reshma (Matheen's first wife)", "Shahina (Matheen's second wife)"
 
     ],
     "Grandchildren": [
@@ -357,6 +357,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
