@@ -54,7 +54,7 @@ with st.sidebar:
     st.caption("Version: 1.2.6 <-- sooo cooool")
 
 # --- NAME INPUT ---
-user_name = st.text_input("Enter your name")
+user_name = st.text_input("Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :))")
 
 # Normalize name
 user_name = user_name.strip().capitalize()
@@ -205,4 +205,5 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
