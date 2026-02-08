@@ -51,7 +51,7 @@ with st.sidebar:
 
     st.divider()
     st.caption("Updated by Muzayyin News 👑")
-    st.caption("Version: 1.2.7 <-- sooo cooool")
+    st.caption("Version: 1.3.0 <-- sooo cooool")
 
 # --- NAME INPUT ---
 user_name = st.text_input("Enter your name (Make sure to just add your first name only, I coded it so that it takes just your first name :))")
@@ -136,24 +136,24 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
 
     st.markdown("### 👩 Raihana ❤️ Abbas")
     st.markdown("- 👦 **Affan** ❤️ Nisha")
-    st.markdown("  - 👧 Nafa")
-    st.markdown("  - 👧 Nazneen")
+    st.markdown("  - --> 👧 Nafa")
+    st.markdown("  - --> 👧 Nazneen")
     st.markdown("- 👧 **Afreena** ❤️ Habeeb")
-    st.markdown("  - 👧 Haya")
-    st.markdown("  - 👧 Hannee")
-    st.markdown("  - 👧 Hala")
-    st.markdown("  - 👦 Yahya")
+    st.markdown("  - --> 👧 Haya")
+    st.markdown("  - --> 👧 Hannee")
+    st.markdown("  - --> 👧 Hala")
+    st.markdown("  - --> 👦 Yahya")
     st.markdown("- 👧 **Ainy** ❤️ Ayaz")
-    st.markdown("  - 👦 Eesa")
-    st.markdown("  - 👦 Rabi")
+    st.markdown("  - --> 👦 Eesa")
+    st.markdown("  - --> 👦 Rabi")
 
     st.divider()
     
     st.markdown("### 👩 Lubaina ❤️ Kaleem")
     st.markdown("- 👦 **Lubaid** ❤️ Jahan")
-    st.markdown("  - 👧 Huma")
+    st.markdown("  - --> 👧 Huma")
     st.markdown("- 👧 **Lubaba** ❤️ Shahid")
-    st.markdown("  - 👧 Shanaya")
+    st.markdown("  - --> 👧 Shanaya")
     st.markdown("- 👧 Fathima")
     st.markdown("- 👦 Ahmed")
 
@@ -163,8 +163,8 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.divider()
 
     st.markdown("### 👨 Momin ❤️ Naziya")
-    st.markdown("- 👧 Muzna")
     st.markdown("- 👦 Muzayyin")
+    st.markdown("- 👧 Muzna")
     st.markdown("- 👦 Mazin")
     st.markdown("- 👦 Mizan")
 
@@ -177,9 +177,11 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
 
     st.markdown("### 👨 Matheen ❤️ Reshma & Shahina")
     st.markdown("- 👧 **Mehreen** ❤️ Noureen")
-    st.markdown("- 👦 Mahir")
-    st.markdown("- 👦 Muhammad")
     st.markdown("- 👧 Mariyam")
+    st.markdown("- 👦 Muhammad")
+    st.markdown("- 👦 Mahir")
+    
+
 
 st.divider()
 
@@ -208,6 +210,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
