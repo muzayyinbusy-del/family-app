@@ -140,9 +140,9 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.markdown("  - --> 👧 Nazneen")
     st.markdown("- 👧 **Afreena** ❤️ Habeeb")
     st.markdown("  - --> 👧 Haya")
+    st.markdown("  - --> 👦 Yahya")
     st.markdown("  - --> 👧 Hannee")
     st.markdown("  - --> 👧 Hala")
-    st.markdown("  - --> 👦 Yahya")
     st.markdown("- 👧 **Ainy** ❤️ Ayaz")
     st.markdown("  - --> 👦 Eesa")
     st.markdown("  - --> 👦 Rabi")
@@ -210,6 +210,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
