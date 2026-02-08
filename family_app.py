@@ -205,6 +205,9 @@ if st.session_state.game_started:
     # Waiting phase
     if now < st.session_state.start_time:
         st.info("⏳ Get ready...")
+        time.sleep(0.1)
+        st.rerun()
+
     else:
         st.write("👇 Tap the 🌳 as fast as you can!")
 
