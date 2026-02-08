@@ -134,10 +134,10 @@ st.header("🌳 Family Tree")
 
 with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
 
-    st.markdown("### 👩 Raihana ❤️ Abbas")
-    st.markdown("- 👦 **Affan** ❤️ Nisha")
-    st.markdown("  - 👧 Nafa")
-    st.markdown("  - 👧 Nazneen")
+    st.markdown("### 1. 👩 Raihana ❤️ Abbas")
+    st.markdown("- 1a. 👦 **Affan** ❤️ Nisha")
+    st.markdown("  - 1aa. 👧 Nafa")
+    st.markdown("  - 1ab. 👧 Nazneen")
     st.markdown("- 👧 **Afreena** ❤️ Habeeb")
     st.markdown("  - 👧 Haya")
     st.markdown("  - 👧 Hannee")
@@ -148,8 +148,7 @@ with st.expander("👴 Hakeem ❤️ Mymoona", expanded=True):
     st.markdown("  - 👦 Rabi")
 
     st.divider()
-
-    st.caption("1")
+    
     st.markdown("### 👩 Lubaina ❤️ Kaleem")
     st.markdown("- 👦 **Lubaid** ❤️ Jahan")
     st.markdown("  - 👧 Huma")
@@ -209,6 +208,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
