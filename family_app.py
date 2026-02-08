@@ -1,10 +1,31 @@
 import streamlit as st
+import os
+
+VISITS_FILE = "visits.txt"
+
+def get_total_visits():
+    if not os.path.exists(VISITS_FILE):
+        with open(VISITS_FILE, "w") as f:
+            f.write("0")
+
+    with open(VISITS_FILE, "r") as f:
+        visits = int(f.read())
+
+    visits += 1
+
+    with open(VISITS_FILE, "w") as f:
+        f.write(str(visits))
+
+    return visits
+
 
 st.set_page_config(
     page_title="Hakim Family Tree",
     page_icon="🌳",
     layout="centered"
 )
+total_visits = get_total_visits()
+
 
 # --- FAMILY COUNTER DATA ---
 current_members = {
@@ -53,6 +74,10 @@ with st.sidebar:
     👨‍👩‍👧‍👦 **Family Members:** {total_current}  
     👶 **Coming Soon:** {total_coming}
     """)
+    
+    st.divider()
+    st.subheader("👀 Website Visits")
+    st.markdown(f"**Total Visits:** {total_visits}")
 
     st.divider()
     st.caption("Updated by Muzayyin News 👑")
@@ -215,6 +240,7 @@ group = st.selectbox("Select a group", family_groups.keys())
 
 for name in family_groups[group]:
     st.write("•", name)
+
 
 
 
